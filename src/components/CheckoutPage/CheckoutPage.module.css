@@ -1,0 +1,43 @@
+.checkoutPage {
+  margin: 3% 8%;
+}
+
+.checkoutPage h1 {
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.items {
+  width: 64%;
+}
+
+.books {
+  padding-inline-start: 0;
+}
+
+.summary {
+  width: 34%;
+}
+
+@media (max-width: 768px) {
+  .checkoutPage {
+    margin: 5%;
+  }
+  .checkoutPage h1 {
+    margin: 30px 0;
+  }
+  .content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .items {
+    width: 100%;
+  }
+  .summary {
+    width: 100%;
+  }
+}

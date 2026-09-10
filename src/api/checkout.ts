@@ -6,17 +6,20 @@ interface TestResponse {
 }
 
 export async function testFetch(bookIds: string[]): Promise<TestResponse> {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  //   return {
-  //     ok: false,
-  //     json: async () => ({
-  //       error: "Unable to place order. Please try again.",
-  //     }),
-  //   };
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  if (Math.random() < 0.5) {
+    return {
+      ok: false,
+      json: async () => ({
+        error: "Unable to place order. Please try again.",
+      }),
+    };
+  }
+
   return {
     ok: true,
     json: async () => ({
-      orderId: `botmOrder-${bookIds.toLocaleString}-${Date.now()}`,
+      orderId: `botmOrder-${Date.now()}`,
       estimatedShipDate: new Date(Date.now() + 7 * 86400000).toISOString(),
     }),
   };

@@ -1,75 +1,43 @@
-# React + TypeScript + Vite
+# Book of the Month — Checkout Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Hi! Thank you for taking the time to review my submission.
+I put an overview here and also included comments in my code.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Setup
 
-## React Compiler
+npm install
+npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Approach
 
-## Expanding the ESLint configuration
+- I hardcoded the mock data for books and address in `src/data/checkoutData.ts`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- I created a mock api response to test my own UI in `src/api/checkout.ts`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- I optimized for mobile and dark mode. Global styles are defined in index.css, where I included theme colors matching Book of the Month's theme!
+  I used modular CSS so that components could live cleanly with their stylesheet. Although it's not necessary here, it would be in larger applications.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- I used react hooks to manage the loading state so that the app would update accordingly. These live in the parent (Checkout Page) and are passed down to the children (Payment Summary)
+  The parent page holds all the logic and states, while the children (BookItem, PaymentSummary, ConfirmationPopup) just display their piece of the UI.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- To clearly indicate the loading state, I changed the button color and text. I also disabled the button while loading to prevent multiple submissions during loading.
 
-```
+## Assumptions & Trade-offs
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+- I put prices in dollar amounts for readability, but it can cause rounding errors in the future.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Since no real backend was provided for POST /api/checkout, I created a fake fetch function that's imitating the post response.
+  This is just to test the UI locally before submitting.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- I also just used plain `fetch` instead of using a data-fetching library for simplicity since it's just a one time request
 
-```
+- I'm not sure what format the estimated shipping date will be returned in, so I just assumed it would be an ISO string
+
+## What I'd do with more time
+
+- With more time I'd work on a real API integration instead of the mocked endpoint
+- On success there's no path forward after the order confirmation. I could create an onClose and a cleared flow after.
+- I'd make this pass accessibillity standards
+- Create component tests using something like React Testing Library

@@ -1,5 +1,7 @@
 // defining all types used for the Checkout Page
 
+export type Status = "idle" | "loading" | "success" | "error";
+
 export interface Book {
   id: string;
   title: string;
@@ -17,8 +19,8 @@ export interface Address {
 }
 
 export interface OrderConfirmation {
-  orderID: string;
-  shipDate: string;
+  orderId: string;
+  estimatedShipDate: string;
 }
 
 export interface OrderError {

@@ -1,0 +1,33 @@
+.bookItem {
+  background-color: var(--component-bg);
+  list-style: none;
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  gap: 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  align-items: center;
+}
+
+.cover {
+  height: 150px;
+  width: auto;
+}
+
+.info {
+  width: 60%;
+}
+
+.info h3 {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .bookItem {
+    margin: 10px 0;
+  }
+  .cover {
+    height: 100px !important;
+  }
+}

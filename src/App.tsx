@@ -1,11 +1,12 @@
 import "./App.css";
-import { CheckoutPage } from "./components/CheckoutPage";
+import { CheckoutPage } from "./components/CheckoutPage/CheckoutPage";
+import { Header } from "./components/Header/Header";
 import { testBooks, testAddress } from "./data/checkoutData";
 
 function App() {
   return (
     <div>
-      <h1>Get started</h1>
+      <Header />
       <CheckoutPage books={testBooks} address={testAddress} />
     </div>
   );
