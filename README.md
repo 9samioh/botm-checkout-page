@@ -1,4 +1,6 @@
 # Book of the Month — Checkout Page
+<img width="1214" height="757" alt="image" src="https://github.com/user-attachments/assets/20fafd5a-6613-4773-be2f-a0f5be831a55" />
+
 
 ## Overview
 
@@ -42,5 +44,7 @@ npm run dev
 - I'd make this pass accessibillity standards
 - Create component tests using something like React Testing Library
 
-<img width="1214" height="757" alt="image" src="https://github.com/user-attachments/assets/20fafd5a-6613-4773-be2f-a0f5be831a55" />
+<img width="328" height="708" alt="image" src="https://github.com/user-attachments/assets/ba5e3dd6-c78e-45f9-8403-67d3be166ae2" />
+<img width="1216" height="753" alt="image" src="https://github.com/user-attachments/assets/0ef2ead9-9c03-4b2f-be98-a0bd56dcfc7c" />
+
 
