@@ -1,5 +1,5 @@
 # Book of the Month — Checkout Page
-<img width="1214" height="757" alt="image" src="https://github.com/user-attachments/assets/20fafd5a-6613-4773-be2f-a0f5be831a55" />
+<img width="607" height="378" alt="image" src="https://github.com/user-attachments/assets/20fafd5a-6613-4773-be2f-a0f5be831a55" />
 
 
 ## Overview
