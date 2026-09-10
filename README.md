@@ -41,3 +41,6 @@ npm run dev
 - On success there's no path forward after the order confirmation. I could create an onClose and a cleared flow after.
 - I'd make this pass accessibillity standards
 - Create component tests using something like React Testing Library
+
+<img width="1214" height="757" alt="image" src="https://github.com/user-attachments/assets/20fafd5a-6613-4773-be2f-a0f5be831a55" />
+
